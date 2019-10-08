@@ -42,9 +42,8 @@ public class MyServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
             response.setContentType("text/html");
             if (isValidUser) {
-                //response.sendRedirect("welcome.jsp");
-                RequestDispatcher rd=request.getRequestDispatcher("welcome.jsp");
-                rd.forward(request,response);
+                RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
+                rd.forward(request, response);
             }
             else{
                 out.print("Sorry Username or Password error.");

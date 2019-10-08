@@ -18,8 +18,12 @@
                     System.out.println("Username is null from request. If request comes from Servlet, then null value");
                 }
             }
+            
+            if (rolename == null) {
+                rolename = (String) request.getAttribute("rolename");
+            }
         %>
-        <p>Welcome <%=username%>, Your RoleName is : <b><%=rolename%></b></p>
+        <p>Welcome <%=username%>, Your Role is : <b><%=rolename%></b></p>
         <p><a href="logout.jsp">Logout</a>
     </body>
 </html>
