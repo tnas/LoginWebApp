@@ -35,8 +35,8 @@ public class MyServlet extends HttpServlet {
         request.setAttribute("username", username); 
         request.setAttribute("rolename", rolename);
         
-        //boolean isValidUser = validateUserOnDatabase(username, password, rolename);
-        boolean isValidUser = validateUserOnMemory(username, password, rolename);
+        boolean isValidUser = validateUserOnDatabase(username, password, rolename);
+        //boolean isValidUser = validateUserOnMemory(username, password, rolename);
         
         try {
             PrintWriter out = response.getWriter();
