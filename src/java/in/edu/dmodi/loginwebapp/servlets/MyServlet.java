@@ -41,6 +41,7 @@ public class MyServlet extends HttpServlet {
         try {
             PrintWriter out = response.getWriter();
             response.setContentType("text/html");
+            
             if (isValidUser) {
                 RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
                 rd.forward(request, response);
@@ -49,11 +50,13 @@ public class MyServlet extends HttpServlet {
                 out.print("Sorry Username or Password error.");
                 //response.sendRedirect("error.jsp");
                 RequestDispatcher rd=request.getRequestDispatcher("error.jsp");
-                rd.include(request,response);
+                rd.include(request, response);
             }
-        }catch(Exception e){
+        }
+        catch(Exception e) {
             e.printStackTrace();
         }
+        
         System.out.println("................Done in servlet................");
     }
     
