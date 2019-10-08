@@ -1,4 +1,4 @@
-package dmodi;
+package in.edu.dmodi.loginwebapp.servlets;
 
 import java.sql.PreparedStatement;
 import java.io.IOException;

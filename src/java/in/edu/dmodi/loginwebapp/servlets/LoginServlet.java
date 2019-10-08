@@ -1,4 +1,4 @@
-package dmodi;
+package in.edu.dmodi.loginwebapp.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
