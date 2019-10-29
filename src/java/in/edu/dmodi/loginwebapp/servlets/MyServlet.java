@@ -23,6 +23,7 @@ public class MyServlet extends HttpServlet {
     ResultSet rs = null;
     PreparedStatement ps = null;
     
+    @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) {
         
         String username = request.getParameter("username");
@@ -97,6 +98,9 @@ public class MyServlet extends HttpServlet {
         return CredentialStore.containsUser(user, pwd, role);
     }
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
+    
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 }
