@@ -22,7 +22,7 @@
                 rolename = (String) request.getAttribute("rolename");
             }
         %>
-        <p>Welcome <%=username%>, Your Role is : <b><%=rolename%></b></p>
+        <p>Bem vindo <%=username%>, Sua Função é : <b><%=rolename%></b></p>
         <p><a href="logout.jsp">Logout</a>
     </body>
 </html>
