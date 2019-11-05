@@ -24,4 +24,9 @@ public class CredentialStore {
     public static boolean containsUser(String user, String pwd, String role) {
         return _users.contains(new Credential(user, pwd, role));
     }
+    
+    public static int addUser(String user, String pwd, String rolename, String fname, String lname, String email) {
+        _users.add(new Credential(user, pwd, rolename, fname, lname, email));
+        return 1;
+    }
 }

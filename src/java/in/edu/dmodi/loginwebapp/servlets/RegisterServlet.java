@@ -1,5 +1,6 @@
 package in.edu.dmodi.loginwebapp.servlets;
 
+import in.edu.dmodi.loginwebapp.util.CredentialStore;
 import java.sql.PreparedStatement;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -34,6 +35,7 @@ public class RegisterServlet extends HttpServlet {
         String lname = request.getParameter("lname");
         String email = request.getParameter("email");
         boolean isSuccess = false;
+        
         try {
             //int i = this.addUserDataBase(user, pwd, rolename, fname, lname, email);
             int i = this.addUserMemory(user, pwd, rolename, fname, lname, email);
@@ -58,6 +60,8 @@ public class RegisterServlet extends HttpServlet {
             response.setContentType("text/html");
             if (isSuccess) {
                 //response.sendRedirect("welcome.jsp");
+                request.getSession().setAttribute("username", user);
+                request.getSession().setAttribute("rolename", rolename);
                 RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
                 rd.forward(request, response);
             } else {
@@ -72,8 +76,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     private int addUserMemory(String user, String pwd, String rolename, String fname, String lname, String email) {
-        // Para implementar
-        return 0;
+        return CredentialStore.addUser(user, pwd, rolename, fname, lname, email);
     }
     
     private int addUserDataBase(String user, String pwd, String rolename, String fname, String lname, String email) throws ClassNotFoundException, SQLException {
